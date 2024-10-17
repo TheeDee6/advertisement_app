@@ -4,7 +4,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 
 // connection to database
-await mongoose.connect();
+await mongoose.connect(process.env.MONGO_URI);
 
 // create an express app
 const app = express();
@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 
 //port listening
-const PORT = 3000;
+const PORT = 3005;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
